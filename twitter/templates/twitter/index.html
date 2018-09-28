@@ -1,0 +1,29 @@
+{% extends 'pollsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<div class="grid-container grid-head">
+    <div class="grid-item"><h1>Twitter search</h1></div>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <p><b>The latest tweets about Django</b></p>
+    </div>
+    {% if tweet_list %}
+    {% for tweet in tweet_list %}
+    <div class="grid-item">
+        <p>{{ tweet }}</p>
+        <p>{{ tweet.tweet_text }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="grid-item"><p>No tweets are available.</p></div>
+    {% endif %}
+</div>
+
+{% endblock %}

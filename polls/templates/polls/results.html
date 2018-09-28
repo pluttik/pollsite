@@ -1,0 +1,26 @@
+{% extends 'pollsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<div class="grid-container grid-head">
+    <div class="grid-item"><h1>{{ question.question_text }}</h1></div>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item">
+        
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        
+    </div>
+    <div class="grid-item">
+        <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'pollsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<div class="grid-container grid-head">
+    <div class="grid-item"><h1>Questions up for voting</h1></div>
+</div>
+
+<div class="grid-container">
+    {% if latest_question_list %}
+    {% for question in latest_question_list %}
+    <div class="grid-item">
+        <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="grid-item"><p>No polls are available.</p></div>
+    {% endif %}
+</div>
+
+{% endblock %}

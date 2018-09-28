@@ -1,0 +1,43 @@
+a {
+    color: #ff7230;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-head {
+    padding-top: 44px;
+}
+
+.grid-item {
+    background-color: #e2e2e2;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* responsive design */
+/* for mobile phone */
+
+/* for tablets */
+@media only screen and (min-width: 700px){
+.grid-container {
+    grid-template-columns: auto auto auto;
+}
+
+.grid-head {
+    grid-template-columns: auto;
+}
+/* for laptops and tablets */
+@media only screen and (min-width: 1200px){
+.grid-container {
+    grid-template-columns: auto auto auto auto;
+}
+.grid-head {
+    grid-template-columns: auto;
+}
+
+/* end responsive design */

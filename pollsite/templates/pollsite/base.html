@@ -1,0 +1,21 @@
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/base.css' %}">
+
+<div class="header">
+    <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'polls:index' %}">voting app</a>
+            <a href="{% url 'twitter:index' %}">twitter search app</a>
+            <a href="http://pluttik.github.io">my CSS/Javascript site</a>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+<script src="{% static 'polls/base.js' %}"></script>

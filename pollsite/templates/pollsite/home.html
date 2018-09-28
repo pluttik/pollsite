@@ -1,0 +1,20 @@
+{% extends 'pollsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<div class="grid-container grid-head">
+    <div class="grid-item"><h1>Welcome to my Django site</h1></div>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <p>Click <a href="{% url 'polls:index' %}">here</a> to view the voting app</p></div>
+    <div class="grid-item">
+        <p>Click <a href="{% url 'twitter:index' %}">here</a> to see recent tweets about Django</p></div>
+</div>
+
+{% endblock %}

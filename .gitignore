@@ -1,0 +1,6 @@
+*.pyc
+pollsite/__pycache__/
+polls/__pycache__/
+myvenv/
+db.sqlite3
+pollsite/secret_key.txt
